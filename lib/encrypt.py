@@ -13,10 +13,10 @@ def encrypt(ciphertext, shift):
     for item in list(ciphertext):
         if item.isalpha():
             if item.isupper():
-                caesar_output = alphabet.index(item.lower()) + shift
+                caesar_output = alphabet.index(item.lower()) + int(shift)
                 print(alphabet[caesar_output].upper(), end="")
             else:
-                caesar_output = alphabet.index(item) + shift
+                caesar_output = alphabet.index(item) + int(shift)
                 print(alphabet[caesar_output], end="")
         else:
             print(item, end="")

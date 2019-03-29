@@ -9,7 +9,7 @@ def main():
     parser = argparse.ArgumentParser(description='Caesar Cipher encryption/decryption tool.')
     parser.add_argument('-e', '--encrypt', type=str, action='store', help='Encrypt Ciphertext')
     parser.add_argument('-d', '--decrypt', type=str, action='store', help='Decrypt Ciphertext')
-    parser.add_argument('-s', '--shift', type=int, action='store', help='Shift value')
+    parser.add_argument('-s', '--shift', type=str, action='store', help='Shift value')
     args = parser.parse_args()
 
     if args.encrypt is None and args.decrypt is None and args.shift is None:
@@ -17,7 +17,7 @@ def main():
         print("Usage:")
         print('-e   --encrypt   "Ciphertext"')
         print('-d   --decrypt   "Ciphertext"')
-        print('-s   --shift   Shift Value(1, 2, 3...)')
+        print("-s   --shift   Shift Value(1, 2, 3...) or 'A' for auto-mode, testing 26 different shift values.")
         print('')
         print('E.g.')
         print('$ caesar.py -e "You cant read this!" -s 5')

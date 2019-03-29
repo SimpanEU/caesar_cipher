@@ -4,7 +4,7 @@ Written for usage with Python 3+
 Usage:  
 -e  --encrypt   "Ciphertext"  
 -d   --decrypt   "Ciphertext"  
--s   --shift   Shift Value(1, 2, 3...)  
+-s   --shift   Shift Value(1, 2, 3...) or 'A' for auto-mode, testing 26 different shift values.    
   
 E.g.  
 $ caesar.py -e "You cant read this!" -s 5  

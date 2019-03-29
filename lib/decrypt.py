@@ -11,14 +11,31 @@ def decrypt(ciphertext, shift):
     for i in range(5):
         alphabet.extend(alphabet)
 
-    print('Decryption output: ', end="")
-    for item in list(ciphertext):
-        if item.isalpha():
-            if item.isupper():
-                caesar_output = alphabet.index(item.lower()) + shift
-                print(alphabet[caesar_output].upper(), end="")
+    if shift.isdigit():
+        print('Decryption output: ', end="")
+        for item in list(ciphertext):
+            if item.isalpha():
+                if item.isupper():
+                    caesar_output = alphabet.index(item.lower()) + int(shift)
+                    print(alphabet[caesar_output].upper(), end="")
+                else:
+                    caesar_output = alphabet.index(item) + int(shift)
+                    print(alphabet[caesar_output], end="")
             else:
-                caesar_output = alphabet.index(item) + shift
-                print(alphabet[caesar_output], end="")
-        else:
-            print(item, end="")
+                print(item, end="")
+
+    elif shift is 'A' or shift is 'a':
+
+        for i in range(26):
+            print('Decryption output', str(i+1)+': ', end="")
+            for item in list(ciphertext):
+                if item.isalpha():
+                    if item.isupper():
+                        caesar_output = alphabet.index(item.lower()) + i
+                        print(alphabet[caesar_output].upper(), end="")
+                    else:
+                        caesar_output = alphabet.index(item) + i
+                        print(alphabet[caesar_output], end="")
+                else:
+                    print(item, end="")
+            print()
