@@ -6,15 +6,12 @@ from lib.decrypt import *
 
 class Cipher:
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, ciphertext, shift):
+        self.ciphertext = ciphertext
+        self.shift = shift
 
-    @staticmethod
-    def encrypt(ciphertext=None, shift=None):
-        if ciphertext and shift:
-            encrypt(ciphertext, shift)
+    def encrypt(self):
+        encrypt_cipher(self.ciphertext, self.shift)
 
-    @staticmethod
-    def decrypt(ciphertext=None, shift=None):
-        if ciphertext and shift is not None:
-            decrypt(ciphertext, shift)
+    def decrypt(self):
+        decrypt_cipher(self.ciphertext, self.shift)

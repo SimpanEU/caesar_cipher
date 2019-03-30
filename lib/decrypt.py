@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-def decrypt(ciphertext, shift):
+def decrypt_cipher(ciphertext, shift):
     print('Decryption input:', ciphertext)
     print('Shift:', shift)
 
@@ -27,7 +27,7 @@ def decrypt(ciphertext, shift):
     elif shift is 'A' or shift is 'a':
 
         for i in range(26):
-            print('Decryption output', str(i+1)+': ', end="")
+            print('Decryption output', str(i + 1) + ': ', end="")
             for item in list(ciphertext):
                 if item.isalpha():
                     if item.isupper():

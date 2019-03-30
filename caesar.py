@@ -5,7 +5,6 @@ from lib.cipher import Cipher
 
 
 def main():
-    caesar_cipher = Cipher('Caesar Cipher')
     parser = argparse.ArgumentParser(description='Caesar Cipher encryption/decryption tool.')
     parser.add_argument('-e', '--encrypt', type=str, action='store', help='Encrypt Ciphertext')
     parser.add_argument('-d', '--decrypt', type=str, action='store', help='Decrypt Ciphertext')
@@ -26,11 +25,13 @@ def main():
 
     # Encryption Mode
     if args.encrypt and args.shift and args.decrypt is None:
-        caesar_cipher.encrypt(args.encrypt, args.shift)
+        caesar = Cipher(args.encrypt, args.shift)
+        caesar.encrypt()
 
     # Decryption Mode
     elif args.decrypt and args.shift and args.encrypt is None:
-        caesar_cipher.decrypt(args.decrypt, args.shift)
+        caesar = Cipher(args.decrypt, args.shift)
+        caesar.decrypt()
 
 
 if __name__ == "__main__":
