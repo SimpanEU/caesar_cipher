@@ -19,9 +19,8 @@ def main():
         print("-s   --shift   Shift Value(1, 2, 3...) or 'A' for auto-mode, testing 26 different shift values.")
         print('')
         print('E.g.')
-        print('$ caesar.py -e "You cant read this!" -s 5')
-        print('Encryption input: You cant read this!')
-        print('Encryption output: Dtz hfsy wjfi ymnx!')
+        print('caesar.py -e "You cant read this!" -s 5')
+        print('caesar.py -d "Dtz hfsy wjfi ymnx!" -s A')
 
     # Encryption Mode
     if args.encrypt and args.shift and args.decrypt is None:

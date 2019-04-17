@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 def encrypt_cipher(ciphertext, shift):
     print('Encryption input:', ciphertext)
 
